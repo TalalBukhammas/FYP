@@ -72,7 +72,7 @@ function [nodes, elements] = processmeshfile(filepath)
                     elements(str2double(separation(1)), 9) = 1;
                 end
                 catch
-                   warning("Input elements format not as expected! Check if there are triangular elements in the mesh"); 
+%                    warning("Input elements format not as expected! Check if there are triangular elements in the mesh"); 
                 end
             end
         end
@@ -82,18 +82,18 @@ function [nodes, elements] = processmeshfile(filepath)
     fclose(fileID);
     
     %% ERROR TESTING
-    if(supportedphysicalid == -1)
-       warning("Support BCs not set.");
-    end
-    if(elementsphysicalid == -1)
-        warning("Element BCs not set.");
-    end
-    if(numberofnodes == -1)
-        warning("Number of nodes not found.");
-    end
-    if(numberofelements == -1)
-        warning("Number of elements not found.");
-    end
+%     if(supportedphysicalid == -1)
+%        warning("Support BCs not set.");
+%     end
+%     if(elementsphysicalid == -1)
+%         warning("Element BCs not set.");
+%     end
+%     if(numberofnodes == -1)
+%         warning("Number of nodes not found.");
+%     end
+%     if(numberofelements == -1)
+%         warning("Number of elements not found.");
+%     end
     elements = elements(any(elements,2),:);
 %     disp(supportedphysicalid);
 %     disp(elementsphysicalid);
